@@ -1,0 +1,665 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>E-learning</title>
+    <style>
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+
+            /* Scroll left by half width */
+        }
+
+        .scrolling-wrapper {
+            animation: scroll 10s linear infinite;
+        }
+
+        .scrolling-wrapper:hover {
+            animation-play-state: paused;
+            /* Pause the animation on hover */
+        }
+
+
+
+        @keyframes slide {
+            0% {
+                transform: translateX(0);
+            }
+
+            33% {
+                transform: translateX(-100%);
+            }
+
+            66% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .carousel-track {
+            animation: slide 15s infinite ease-in-out;
+        }
+
+        .carousel-track:hover {
+            animation-play-state: paused;
+        }
+
+        .path {
+            clip-path: polygon(0.5% 17.8%, 1.5% 15%, 3% 13.5%, 97.6% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 22.5%, 0% 21.3%);
+        }
+
+        .gradient {
+            background: #091e79;
+            background: linear-gradient(90deg, rgba(9, 30, 121, 1) 0%, rgba(0, 212, 255, 1) 100%);
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <main class="w-[100%] p-0 m-0">
+        <!-- ============================================================fist page nav============================================================ -->
+
+        <div class="w-[100%] flex h-24 sticky top-0 bg-white  shadow-xl z-10">
+            <div class=" w-[26%]  flex justify-end  items-center max-lg:w-[100%] max-lg:justify-start ">
+                <img class="h-13 mr-10 pl-10" src="./img.html/logo.svg">
+            </div>
+            <div class=" w-[38%] :">
+                <ul class="flex justify-between h-24 items-center text-white font-light text-xl max-xl:hidden ">
+                    <li class="hover:text-black text-black font-mono"><a href="#">Home</a>
+                        <div class="w-7  border-blue-600  border-b-4 rounded-full "></div>
+                    </li>
+                    <li class="hover:text-black text-gray-600"><a href="#">Courses </a></li>
+                    <li class="hover:text-black text-gray-600"><a href="#">Mentor</a></li>
+                    <li class="hover:text-black text-gray-600"><a href="#"></a>Group</li>
+                    <li class="hover:text-black text-gray-600"><a href="#"></a>Testimonial</li>
+                    <li class="hover:text-black text-gray-600"><a href="#"></a>Docs</li>
+                </ul>
+            </div>
+            <div class=" w-[36%] flex gap-4 items-center pl-[30px] max-xl:hidden">
+                <button
+                    class="h-16 w-44  bg-blue-500 rounded-full hover:bg-pink-50 text-white text-xl hover:text-blue-500">sign
+                    in</button>
+                <button
+                    class="h-16 w-44 bg-pink-50 rounded-full hover:bg-blue-500 text-blue-500 text-xl hover:text-black">sing
+                    up</button>
+            </div>
+        </div>
+
+        <!-- ============================================================second page============================================================== -->
+
+        <div class="bg-blue-50 w-[100%] h-[700px] flex  gap-11 items-center justify-center max-lg:block max-lg:h-auto ">
+            <div class=" w-[33%] h-[500px] max-lg:w-[100%] max-lg:h-auto max-lg:py-10 max-lg:px-10 ">
+                <div class="flex gap-3 text-green-500 font-sans ">
+                    <img class="h-5 flex" src="./img.html/image.png">
+                    <p>Get 30% off on first enroll </p>
+                </div>
+                <p class="text-midnight_text text-4xl sm:text-5xl font-semibold pt-5 ">
+                    Advance your engineering skills withus. </p>
+                <p class="text-gray-600 py-5 text-xl">Build skills with our courses and mentor from world-class
+                    companies. </p>
+                <div class="flex mt-5">
+                    <input class="h-20 w-full rounded-full pl-7 outline-none bg-white" type="text"
+                        placeholder="search courses...">
+
+                    <span
+                        class=" h-18 w-19 rounded-full mt-1 -ml-[83px] pt-2 pl-5 bg-blue-600 text-white text-[35px] font-thin">
+                        <i class="fa fa-search"></i></span>
+                </div>
+                <div class="flex justify-between  mt-10 max-[500px]:block">
+                    <div class="flex gap-3">
+                        <img src="./img.html/check-circle.svg">
+                        <p>Flexible </p>
+                    </div>
+                    <div class="flex gap-3">
+                        <img src="./img.html/check-circle.svg">
+                        <p>Learning path </p>
+                    </div>
+                    <div class="flex gap-3">
+                        <img src="./img.html/check-circle.svg">
+                        <p>Community </p>
+                    </div>
+                </div>
+            </div>
+            <div class=" w-[35%] h-[500px] max-lg:w-[100%] max-lg:h-auto max-lg:pb-10">
+                <img class="h-full w-full" src="./img.html/mahila (1).png">
+            </div>
+        </div>
+
+        <!-- ============================================================thread page============================================================== -->
+
+        <div class="h-[400px] w-full px-10 ">
+            <p class="text-center font-medium text-2xl pt-24 pb-20 max-[500px]:ml10 ">Trusted by companies of all sizes
+            </p>
+            <!-- Carousel Container -->
+            <div class="w-full flex justify-center items-center">
+                <div class="overflow-hidden w-full  max-w-7xl mx-auto px-4">
+
+                    <!-- Scrolling Track -->
+                    <div class="flex w-[200%] gap-32 scrolling-wrapper">
+
+                        <!-- Set of Logos -->
+                        <div
+                            class="flex w-1/2 items-center gap-6 sm:gap-10 md:gap-16 lg:gap-20 justify-between flex-shrink-0">
+                            <img src="./img.html/airbnb.svg"
+                                class="w-20 sm:w-24 md:w-28 object-contain max-[500px]:hidden" />
+                            <img src="./img.html/hubspot.svg" class="w-20 sm:w-24 md:w-28 object-contain" />
+                            <img src="./img.html/google.svg" class="w-20 sm:w-24 md:w-28 object-contain" />
+                            <img src="./img.html/fedex.svg"
+                                class="w-20 sm:w-24 md:w-28 object-contain max-[500px]:hidden" />
+                            <img src="./img.html/microsoft.svg" class="w-20 sm:w-24 md:w-28 object-contain " />
+                        </div>
+
+                        <!-- Duplicated Logos for Seamless Loop -->
+                        <div
+                            class="flex w-1/2 items-center gap-6 sm:gap-10 md:gap-16 lg:gap-20 justify-between flex-shrink-0">
+                            <img src="./img.html/airbnb.svg"
+                                class="w-20 sm:w-24 md:w-28 object-contain max-[500px]:hidden" />
+                            <img src="./img.html/hubspot.svg" class="w-20 sm:w-24 md:w-28 object-contain" />
+                            <img src="./img.html/google.svg" class="w-20 sm:w-24 md:w-28 object-contain" />
+                            <img src="./img.html/fedex.svg" class="w-20 sm:w-24 md:w-28 object-contain" />
+                            <img src="./img.html/microsoft.svg"
+                                class="w-20 sm:w-24 md:w-28 object-contain max-[500px]:hidden" />
+                        </div>
+                    </div>
+
+                    <!-- Bottom Border -->
+                    <div class="w-[100%] border-b border-gray-500 pt-12"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================fourth page============================================================== -->
+        <div id="" class="w-full h-auto py-20 bg-slate-50 flex justify-center items-center">
+            <div class="  w-[70%] h-auto flex justify-between min-w-80 max-xl:block max-xl:w-[300px]">
+                <!-- 1 card -->
+                <div class="flex gap-4 ">
+                    <div class="w-fit h-[520px] bg-white rounded-2xl px-3 shadow-xl/20 max-2xl:w-[260px]
+                        max-2xl:h-[500px] max-xl:w-fit max-xl:mb-14">
+                        <img class="w-[320px]" src="./img.html/coursetwo.png">
+                        <div class="flex justify-end -mt-20 ">
+                            <p class="bg-blue-700 h-24 w-24 rounded-full pl-6 pt-5 mr-4 text-white">BEST SELLER</p>
+                        </div>
+                        <p class=" font-bold text-2xl py-3">We Launch Delia<br> Webflow this Week!</p>
+                        <p class="font-light pb-4">Colt stelle</p>
+                        <div class="flex justify-between font-medium text-2xl">
+                            <div class="flex gap-2 ">
+                                <p class="text-red-500">5</p>
+                                <p class="pt-1 text-base text-yellow-400">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                </p>
+                            </div>
+                            <p class="">$ 20</p>
+                        </div>
+                        <div class=" pt-3 border-b-1 border-b-gray-400 "></div>
+                        <div class="flex justify-between">
+                            <div class="flex gap-3 pt-4">
+                                <img class="h-6 " src="./img.html/book.png">
+                                <p>12 Classes</p>
+                            </div>
+                            <div class="flex gap-3 pt-4">
+                                <img class="h-6" src="./img.html/user.png">
+                                <p>12 Classes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 2 card -->
+                <div class="flex gap-4">
+                    <div
+                        class="w-fit h-[520px] bg-white rounded-2xl px-3 shadow-xl/20 max-2xl:w-[260px] max-2xl:h-[500px] max-xl:w-fit  max-xl:mb-14 ">
+                        <img class="w-[320px]" src="./img.html/coursetwo.png">
+                        <div class="flex justify-end -mt-20 ">
+                            <p class="bg-blue-700 h-24 w-24 rounded-full pl-6 pt-5 mr-4 text-white">BEST SELLER</p>
+                        </div>
+                        <p class=" font-bold text-2xl py-3">We Launch Delia<br> Webflow this Week!</p>
+                        <p class="font-light pb-4">Colt stelle</p>
+                        <div class="flex justify-between font-medium text-2xl">
+                            <div class="flex gap-2 ">
+                                <p class="text-red-500">5</p>
+                                <p class="pt-1 text-base text-yellow-400">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                </p>
+                            </div>
+                            <p class="">$ 20</p>
+                        </div>
+                        <div class=" pt-3 border-b-1 border-b-gray-400 "></div>
+                        <div class="flex justify-between">
+                            <div class="flex gap-3 pt-4">
+                                <img class="h-6 " src="./img.html/book.png">
+                                <p>12 Classes</p>
+                            </div>
+                            <div class="flex gap-3 pt-4">
+                                <img class="h-6" src="./img.html/user.png">
+                                <p>12 Classes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 3card -->
+                <div class="flex gap-4">
+                    <div
+                        class="w-fit h-[520px] bg-white rounded-2xl px-3 shadow-xl/20 max-2xl:w-[260px] max-2xl:h-[500px] max-xl:w-fit  max-xl:mb-14">
+                        <img class="w-[320px]" src="./img.html/coursetwo.png">
+                        <div class="flex justify-end -mt-20 ">
+                            <p class="bg-blue-700 h-24 w-24 rounded-full pl-6 pt-5 mr-4 text-white">BEST SELLER</p>
+                        </div>
+                        <p class=" font-bold text-2xl py-3">We Launch Delia<br> Webflow this Week!</p>
+                        <p class="font-light pb-4">Colt stelle</p>
+                        <div class="flex justify-between font-medium text-2xl">
+                            <div class="flex gap-2 ">
+                                <p class="text-red-500">5</p>
+                                <p class="pt-1 text-base text-yellow-400">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                </p>
+                            </div>
+                            <p class="">$ 20</p>
+                        </div>
+                        <div class=" pt-3 border-b-1 border-b-gray-400 "></div>
+                        <div class="flex justify-between">
+                            <div class="flex gap-3 pt-4">
+                                <img class="h-6 " src="./img.html/book.png">
+                                <p>12 Classes</p>
+                            </div>
+                            <div class="flex gap-3 pt-4">
+                                <img class="h-6" src="./img.html/user.png">
+                                <p>12 Classes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ============================================================five page================================================================ -->
+
+        <div class="h-[700px] w-full bg-cyan-50">
+
+            <div class="flex justify-center">
+                <div class="h-auto w-[70%] bg-slate-5">
+                    <p class="font-bold text-[45px] -mb-6 pt-14 text-gray-700">Meet with our</p>
+                    <p class=" font-bold text-[45px] text-gray-700"> mentor.</p>
+                </div>
+            </div>
+            <div class="flex justify-center pt-20 ">
+                <div class="w-[70%] overflow-hidden ">
+                    <!-- Carousel Track: All 6 cards laid out -->
+                    <div class="flex w-[200%] gap-36 max-2xl:gap-14 carousel-track">
+
+                        <!-- Group 1: First 3 cards -->
+                        <div class="flex w-1/2 justify-between px-4">
+                            <!-- CARD 1 -->
+                            <div class="w-fit h-auto  ">
+                                <img src="./img.html/user1 (1).png">
+                                <div class="flex justify-end ">
+                                    <p
+                                        class="h-14 w-14 bg-white rounded-full -mt-40 mr-14 pt-2 pl-4 text-3xl font-bold text-blue-400 max-sm:hidden">
+                                        in
+                                    </p>
+                                </div>
+                                <p class=" text-3xl font-medium text-center -mt-10 font-serif">Shoo Thar Mien</p>
+                                <p class=" text-center text-gray-500">Senior UX Designer</p>
+                            </div>
+                            <!-- CARD 2 -->
+                            <div class="w-fit h-auto max-lg:hidden">
+                                <img src="./img.html/user2.png">
+                                <div class="flex justify-end ">
+                                    <p
+                                        class="h-14 w-14 bg-white rounded-full -mt-40 mr-14 pt-2 pl-4 text-3xl font-bold text-blue-400">
+                                        in
+                                    </p>
+                                </div>
+                                <p class=" text-3xl font-medium text-center -mt-10 font-serif">Shoo Thar Mien</p>
+                                <p class=" text-center text-gray-500">Senior UX Designer</p>
+                            </div>
+                            <!-- CARD 3 -->
+                            <div class="w-fit h-auto max-2xl:hidden ">
+                                <img src="./img.html/user3.png">
+                                <div class="flex justify-end ">
+                                    <p
+                                        class="h-14 w-14 bg-white rounded-full -mt-40 mr-14 pt-2 pl-4 text-3xl font-bold text-blue-400">
+                                        in
+                                    </p>
+                                </div>
+                                <p class=" text-3xl font-medium text-center -mt-10 font-serif">Shoo Thar Mien</p>
+                                <p class=" text-center text-gray-500">Senior UX Designer</p>
+                            </div>
+                        </div>
+
+                        <!-- Group 2: Next 3 cards -->
+                        <div class="flex w-1/2 justify-between px-4">
+                            <!-- CARD 4 -->
+                            <div class="w-fit h-auto max-lg:hidden ">
+                                <img src="./img.html/user1 (1).png">
+                                <div class="flex justify-end ">
+                                    <p
+                                        class="h-14 w-14 bg-white rounded-full -mt-40 mr-14 pt-2 pl-4 text-3xl font-bold text-blue-400">
+                                        in
+                                    </p>
+                                </div>
+                                <p class=" text-3xl font-medium text-center -mt-10 font-serif">Shoo Thar Mien</p>
+                                <p class=" text-center text-gray-500">Senior UX Designer</p>
+                            </div>
+                            <!-- CARD 5 -->
+                            <div class="w-fit h-auto max-2xl:hidden ">
+                                <img src="./img.html/user2.png">
+                                <div class="flex justify-end ">
+                                    <p
+                                        class="h-14 w-14 bg-white rounded-full -mt-40 mr-14 pt-2 pl-4 text-3xl font-bold text-blue-400">
+                                        in
+                                    </p>
+                                </div>
+                                <p class=" text-3xl font-medium text-center -mt-10 font-serif">Shoo Thar Mien</p>
+                                <p class=" text-center text-gray-500">Senior UX Designer</p>
+                            </div>
+                            <!-- CARD 6 -->
+                            <div class="w-fit h-auto ">
+                                <img src="./img.html/user3.png">
+                                <div class="flex justify-end ">
+                                    <p
+                                        class="h-14 w-14 bg-white rounded-full -mt-40 mr-14 pt-2 pl-4 text-3xl font-bold text-blue-400  max-sm:hidden">
+                                        in
+                                    </p>
+                                </div>
+                                <p class=" text-3xl font-medium text-center -mt-10 font-serif">Shoo Thar Mien</p>
+                                <p class=" text-center text-gray-500">Senior UX Designer</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ============================================================six page================================================================= -->
+
+        <div class="w-full h-[500px] bg-gray-50 flex justify-center items-center">
+
+            <div class="max-w-[70%] mx-auto overflow-hidden">
+
+                <!-- Carousel Wrapper -->
+                <div class=" relative w-full overflow-hidden">
+                    <!-- Inner track -->
+                    <div class="flex w-[300%] carousel-track justify-between pt-24">
+                        <!-- Slide 1 -->
+                        <div class=" w-[400px] h-[220px] bg-white rounded-2xl">
+                            <div>
+                                <img class="w-24 -mt-10" src="./img.html/user1.png">
+                                <p class="pl-3 -mt-4 font-normal text-[18px]">There are many variations of passages
+                                    of Lorem Ipsum
+                                    available,
+                                    but the
+                                    majority
+                                    have suffered
+                                    alteration in some form,
+                                    by injected humour
+                                </p>
+                            </div>
+                            <div class="flex justify-between px-3">
+                                <p class="font-medium text-[20px]">Robert Fox</p>
+                                <p class="pt-2 text-base text-yellow-400">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                </p>
+                            </div>
+                            <p class="px-3">CEO, Parkview Int.Ltd</p>
+                        </div>
+                        <div class=" w-[400px] h-[220px] bg-white rounded-2xl max-md:hidden">
+                            <div>
+                                <img class="w-24 -mt-10" src="./img.html/user2.png">
+                                <p class="pl-3 -mt-4 font-normal text-[18px]">There are many variations of passages
+                                    of Lorem Ipsum
+                                    available,
+                                    but the
+                                    majority
+                                    have suffered
+                                    alteration in some form,
+                                    by injected humour
+                                </p>
+                            </div>
+                            <div class="flex justify-between px-3">
+                                <p class="font-medium text-[20px]">Robert Fox</p>
+                                <p class="pt-2 text-base text-yellow-400">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                </p>
+                            </div>
+                            <p class="px-3">CEO, Parkview Int.Ltd</p>
+                        </div>
+                        <div class=" w-[400px] h-[220px] bg-white rounded-2xl max-xl:hidden">
+                            <div>
+                                <img class="w-24 -mt-10" src="./img.html/user3.png">
+                                <p class="pl-3 -mt-4 font-normal text-[18px]">There are many variations of passages
+                                    of Lorem Ipsum
+                                    available,
+                                    but the
+                                    majority
+                                    have suffered
+                                    alteration in some form,
+                                    by injected humour
+                                </p>
+                            </div>
+                            <div class="flex justify-between px-3">
+                                <p class="font-medium text-[20px]">Robert Fox</p>
+                                <p class="pt-2 text-base text-yellow-400">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                </p>
+                            </div>
+                            <p class="px-3">CEO, Parkview Int.Ltd</p>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class=" w-[400px] h-[220px] bg-white rounded-2xl max-sm:hidden">
+                            <div>
+                                <img class="w-24 -mt-10" src="./img.html/user1.png">
+                                <p class="pl-3 -mt-4 font-normal text-[18px]">There are many variations of passages
+                                    of Lorem Ipsum
+                                    available,
+                                    but the
+                                    majority
+                                    have suffered
+                                    alteration in some form,
+                                    by injected humour
+                                </p>
+                            </div>
+                            <div class="flex justify-between px-3">
+                                <p class="font-medium text-[20px]">Robert Fox</p>
+                                <p class="pt-2 text-base text-yellow-400">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                </p>
+                            </div>
+                            <p class="px-3">CEO, Parkview Int.Ltd</p>
+                        </div>
+                        <div class=" w-[400px] h-[220px] bg-white rounded-2xl max-xl:hidden">
+                            <div>
+                                <img class="w-24 -mt-10" src="./img.html/user2.png">
+                                <p class="pl-3 -mt-4 font-normal text-[18px]">There are many variations of passages
+                                    of Lorem Ipsum
+                                    available,
+                                    but the
+                                    majority
+                                    have suffered
+                                    alteration in some form,
+                                    by injected humour
+                                </p>
+                            </div>
+                            <div class="flex justify-between px-3">
+                                <p class="font-medium text-[20px]">Robert Fox</p>
+                                <p class="pt-2 text-base text-yellow-400">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                </p>
+                            </div>
+                            <p class="px-3">CEO, Parkview Int.Ltd</p>
+                        </div>
+                        <div class=" w-[400px] h-[220px] bg-white rounded-2xl">
+                            <div>
+                                <img class="w-24 -mt-10" src="./img.html/user3.png">
+                                <p class="pl-3 -mt-4 font-normal text-[18px]">There are many variations of passages
+                                    of Lorem Ipsum
+                                    available,
+                                    but the
+                                    majority
+                                    have suffered
+                                    alteration in some form,
+                                    by injected humour
+                                </p>
+                            </div>
+                            <div class="flex justify-between px-3">
+                                <p class="font-medium text-[20px]">Robert Fox</p>
+                                <p class="pt-2 text-base text-yellow-400">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                </p>
+                            </div>
+                            <p class="px-3">CEO, Parkview Int.Ltd</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ============================================================seven page=============================================================== -->
+
+        <div class=" w-full h-[700px]  flex justify-center items-center">
+            <!-- <div
+                class="bg-[url('./img.html/bgFile.png')] bg-contain bg-center bg-no-repeat rounded-2xl  h-[400px] w-[70%] max-lg:w-[90%] max-[850px]:h-[600px] "> -->
+
+
+            <div class=" w-[70%] h-auto path rounded-2xl py-16 gradient ">
+
+                <p class="pt- text-center font-medium text-6xl text-white max-[850px]:text-2xl ">
+                    Newsletter.
+                </p>
+                <p class="text-center pt-5  text-gray-200 ">Subscribe our newsletter for
+                    discounts,<br>promo and many
+                    more.
+                </p>
+                <div class="w-full flex justify-center items-center">
+                    <input
+                        class="w-[700px] h-[70px] outline-none bg-white mt-10 rounded-full pl-10 mx-10  text-xl max-[850px]:w-[200px] max-[850px]:h-[50px] max max-[850px]:text-xs  :"
+                        type="text" placeholder="Enter your email address">
+                </div>
+
+            </div>
+        </div>
+        <!-- ============================================================footer=================================================================== -->
+
+        <div class="w-full h-auto py-12 bg-cyan-100 flex justify-center items-center">
+            <div class="w-[70%] h-auto flex justify-between max-xl:block  ">
+                <div class="w-[40%]  flex justify-between max-xl:w-full  max-sm:block max-xl:pb-20">
+                    <div>
+                        <img src="./img.html/logo.svg ">
+                        <div class="flex gap-3 h-6 cursor-pointer  ">
+                            <a target="_blank" class="h-6 " href="https://www.facebook.com/">
+                                <img class="h-6 hover:bg-blue-500" src="./img.html/facebook.png" alt="">
+                            </a>
+                            <a target="_blank" href="https://x.com/">
+                                <img class="h-6" src="./img.html/twitter.png" alt="">
+
+                            </a>
+                            <a target="_blank" href="https://www.instagram.com/accounts/login/">
+                                <img class="h-6" src="./img.html/instagram.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class=" max-sm:pt-20  ">
+                        <h1 class="text-2xl font-bold pb-4 "> Links</h1>
+                        <p class="pb-2">Home</p>
+                        <p class="pb-2"> Courses </p>
+                        <p class="pb-2">Mentor</p>
+                        <p class="pb-2">Group</p>
+                        <p class="pb-2">Testimonial</p>
+                        <p class="pb-2">Docs</p>
+                    </div>
+                </div>
+                <div class="w-[40%]  flex justify-between max-xl:w-full  max-sm:block max-xl:pb-20">
+                    <div class=" max-sm:pb-20  ">
+                        <h1 class="text-2xl font-bold pb-4 "> Other </h1>
+                        <p class="pb-2">About Us </p>
+                        <p class="pb-2"> Our Team</p>
+                        <p class="pb-2">career</p>
+                        <p class="pb-2">Services</p>
+                        <p class="pb-2">Contact</p>
+                    </div>
+                    <div>
+                        <div class="flex gap-4 pb-6">
+                            <a target="_blank" class="flex gap-4 "
+                                href="https://www.google.co.in/maps/place/Suvaidyam/@25.8356716,84.8681551,17z/data=!3m1!4b1!4m6!3m5!1s0x3992b3006a6ec4b3:0x998d01f7712e7ad9!8m2!3d25.8356716!4d84.87073!16s%2Fg%2F11v_2sx3kk?entry=ttu&g_ep=EgoyMDI1MDUyNi4wIKXMDSoASAFQAw%3D%3D ">
+                                <img class="h-6" src="./img.html/placeholder.png" alt="">
+                                <p> Suvaidyam, Garkha Chapra (saran)</p>
+                            </a>
+                        </div>
+                        <div class="flex gap-4 pb-6">
+                            <img class="h-6" src="./img.html/phone-call.png" alt="">
+                            <p>+45 3411-4411</p>
+                        </div>
+                        <div class="flex gap-4 pb-6">
+
+                            <a target="_blank"
+                                href="https://www.instagram.com/itz___ashu___0.2?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+                                <img class="h-6" src=" img.html/instagram.png" alt="">
+                            </a>
+                            <a target="_blank"
+                                href="https://www.instagram.com/itz___ashu___0.2?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+                                <p>itz ashu 0.2</p>
+
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
