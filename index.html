@@ -32,9 +32,6 @@
 
 
 
-
-
-
         @keyframes slide {
             0% {
                 transform: translateX(0);
@@ -78,11 +75,14 @@
     <main class="w-[100%] p-0 m-0">
         <!-- ============================================================fist page nav============================================================ -->
 
-        <div class="w-[100%] flex h-24 sticky top-0 bg-white  shadow-xl z-10">
-            <div class=" w-[26%]  flex justify-end  items-center max-lg:w-[100%] max-lg:justify-start ">
-                <img class="h-13 mr-10 pl-10" src="./img.html/logo.svg">
+        <nav class="w-full flex h-24 sticky top-0 bg-white shadow-xl z-10">
+            <!-- Logo -->
+            <div class="w-[26%] flex justify-end pr-7 items-center max-xl:p[0px] max-xl:justify-start">
+                <img class="h-13 min-w-[200px] " src="./img.html/logo.svg" alt="Logo">
             </div>
-            <div class=" w-[38%] :">
+
+            <!-- Desktop Nav Links -->
+            <div class="w-[38%] max-xl: ">
                 <ul class="flex justify-between h-24 items-center text-white font-light text-xl max-xl:hidden ">
                     <li class="hover:text-black text-black font-mono"><a href="#">Home</a>
                         <div class="w-7  border-blue-600  border-b-4 rounded-full "></div>
@@ -94,16 +94,51 @@
                     <li class="hover:text-black text-gray-600"><a href="#"></a>Docs</li>
                 </ul>
             </div>
-            <div class=" w-[36%] flex gap-4 items-center pl-[30px] max-xl:hidden">
+
+            <!-- Desktop Buttons -->
+            <div class="w-[36%]  hidden xl:flex justify-start items-center gap-4 pl-[30px]">
                 <button
-                    class="h-16 w-44  bg-blue-500 rounded-full hover:bg-pink-50 text-white text-xl hover:text-blue-500">sign
-                    in</button>
+                    class="h-16 w-44  bg-blue-500 rounded-full hover:bg-pink-50 text-white text-xl hover:text-blue-500">Sign
+                    In</button>
                 <button
-                    class="h-16 w-44 bg-pink-50 rounded-full hover:bg-blue-500 text-blue-500 text-xl hover:text-black">sing
-                    up</button>
+                    class="h-16 w-44 bg-pink-50 rounded-full hover:bg-blue-500 text-blue-500 text-xl hover:text-black">Sign
+                    Up</button>
+            </div>
+
+            <!-- Hamburger Icon -->
+            <div class="xl:hidden flex items-center ml-auto">
+                <button id="menu-toggle" class="text-3xl text-blue-600 pr-10 focus:outline-none">&#9776;</button>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden xl:hidden   bg-white px-6 py-4 space-y-4 shadow-md">
+            <div class=" flex-col justify-center  bg-white px-6 py-4 space-y-4">
+                <a href="#" class="block text-gray-700 hover:text-blue-600">Home</a>
+                <a href="#" class="block text-gray-700 hover:text-blue-600">Courses</a>
+                <a href="#" class="block text-gray-700 hover:text-blue-600">Mentor</a>
+                <a href="#" class="block text-gray-700 hover:text-blue-600">Group</a>
+                <a href="#" class="block text-gray-700 hover:text-blue-600">Testimonial</a>
+                <a href="#" class="block text-gray-700 hover:text-blue-600">Docs</a>
+            </div>
+            <div class="flex flex-col gap-2">
+                <button
+                    class="h-12 w-full bg-blue-500 rounded-full text-white hover:bg-pink-50 hover:text-blue-500">Sign
+                    In</button>
+                <button
+                    class="h-12 w-full bg-pink-50 rounded-full text-blue-500 hover:bg-blue-500 hover:text-white">Sign
+                    Up</button>
             </div>
         </div>
 
+        <script>
+            const menuToggle = document.getElementById("menu-toggle");
+            const mobileMenu = document.getElementById("mobile-menu");
+
+            menuToggle.addEventListener("click", () => {
+                mobileMenu.classList.toggle("hidden");
+            });
+        </script>
+        </div>
         <!-- ============================================================second page============================================================== -->
 
         <div class="bg-blue-50 w-[100%] h-[700px] flex  gap-11 items-center justify-center max-lg:block max-lg:h-auto ">
@@ -189,7 +224,7 @@
 
         <!-- ============================================================fourth page============================================================== -->
         <div id="" class="w-full h-auto py-20 bg-slate-50 flex justify-center items-center">
-            <div class="  w-[70%] h-auto flex justify-between min-w-80 max-xl:block max-xl:w-[300px]">
+            <div class="  w-[70%] h-auto flex justify-between min-w-80 flex flex-wrap ">
                 <!-- 1 card -->
                 <div class="flex gap-4 ">
                     <div class="w-fit h-[520px] bg-white rounded-2xl px-3 shadow-xl/20 max-2xl:w-[260px]
